@@ -1,7 +1,7 @@
-# Deep learning, Machine Learning and Natural Language Processing based project to check the relevance of user-queries on search engines, paid by companies for their advertisements of their brands and products. 
+# Automatic query 'relevance' to advertisement detection tool based on deep learning, machine learning and natural language processing 
 
-Companies pay search engines like www.google.com to provide advertisements of their brands and products. Google charges companies for each advertisement it shows for a specific user query. However, not all advertisements provided by google relevant to the user-query. While google refunds the add cost for irrelevant queries, companies face the challenge of manually qualifying whenever google shows a wrong add for a brand or a product. 
-This deep learning, machine learning and NLP -based project solves this issue by automatically classifying irrelevant queries from the relevant ones. The end-to-end AI software pipeline performs all the necessary steps as follows:
+Companies pay search engines like www.google.com to provide advertisements of their brands and products. Google charges companies for each advertisement it shows for a specific user query. However, not all advertisements provided by google relevant to the user-query. While google refunds the add cost for irrelevant queries, companies face the challenge of manually qualifying whenever google shows a wrong add for a brand or a product.
+This deep learning, machine learning and NLP -based project solves this issue by automatically classifying irrelevant queries from the relevant ones. The end goal of this project is to help companies in better CPR (Conversion Rate Prediction), thereby saving money on advertisements of their products. The end-to-end AI pipeline performs all the necessary steps as follows:
 
 ## 0. Preprocessing:
 [https://github.com/Aaditya-Bhatia/Search_Engine_Query-Advertisment_Management/blob/master/0_validate_labeled_data.py] This is the preprocessing script where the labeled data can be checked for manual errors, and cleaned to make the data consistent.
