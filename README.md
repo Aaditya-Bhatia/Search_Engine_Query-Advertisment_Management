@@ -31,5 +31,5 @@ Companies have an influx of new products and removing old products. As time pass
 This module gets predictions for new data. This can be customized for individual company needs.
 
 A sample image of Canon EOS search query for which many companies paid for providing a "relevant" advertisement.
-![https://github.com/Aaditya-Bhatia/Search_Engine_Query-Advertisment_Management/blob/master/Canon_Add_Image.png]
+![ad_img](https://github.com/Aaditya-Bhatia/Search_Engine_Query-Advertisment_Management/blob/master/Canon_Add_Image.png)
 
