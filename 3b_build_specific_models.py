@@ -65,8 +65,7 @@ def vectorize(brand_vocab_list, brand_df):
     cv = CountVectorizer()
     word_count_vector = cv.fit(brand_vocab_list)
     sparse_matrix = word_count_vector.transform(brand_df.query_lemma)
-    df = pd.DataFrame(sparse_matrix.toarray(), columns=cv.get_feature_names())
-    return df
+    return pd.DataFrame(sparse_matrix.toarray(), columns=cv.get_feature_names())
 
 
 if __name__ == "__main__":

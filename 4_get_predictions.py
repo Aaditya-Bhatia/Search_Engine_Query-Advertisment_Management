@@ -73,9 +73,8 @@ def vectorize(brand_vocab_list, df):
 
 
 def readModel(name):
-    json_file = open(dirName + name + '_model.json', 'r')
-    loaded_model_json = json_file.read()
-    json_file.close()
+    with open(dirName + name + '_model.json', 'r') as json_file:
+        loaded_model_json = json_file.read()
     loaded_model = model_from_json(loaded_model_json)
     # load weights into new model
     loaded_model.load_weights(dirName + name + "_model.h5")
@@ -86,8 +85,7 @@ def readModel(name):
 def getWordEmbeddings(df):
     cv = pickle.load(open(dirName + "countVectorizer.pkl", 'rb'))
     sparse_matrix = cv.transform(df.query_lemma)
-    query_tf_df = pd.DataFrame(sparse_matrix.toarray(), columns=cv.get_feature_names())
-    return query_tf_df
+    return pd.DataFrame(sparse_matrix.toarray(), columns=cv.get_feature_names())
 
 
 def getPredictions(item, grouped, dl_model):
