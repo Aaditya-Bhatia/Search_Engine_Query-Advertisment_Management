@@ -4,7 +4,7 @@ pandas==1.0.3
 tqdm==4.45.0
 Unidecode==1.0.22
 Keras==2.3.1
-numpy==1.18.2
+numpy==1.22.0
 spacy==2.2.4
 nltk==3.6.5
 scikit_learn==0.22.2.post1
