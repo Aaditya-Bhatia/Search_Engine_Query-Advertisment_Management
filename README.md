@@ -1,35 +1,73 @@
-# Automatic query 'relevance' to advertisement detection tool based on deep learning, machine learning and natural language processing 
+# Automatic Query Relevance Detection for Advertisement
 
-Companies pay search engines like www.google.com to provide advertisements of their brands and products. Google charges companies for each advertisement it shows for a specific user query. However, not all advertisements provided by google relevant to the user-query. While google refunds the add cost for irrelevant queries, companies face the challenge of manually qualifying whenever google shows a wrong add for a brand or a product.
-This deep learning, machine learning and NLP -based project solves this issue by automatically classifying irrelevant queries from the relevant ones. The end goal of this project is to help companies in better CPR (Conversion Rate Prediction), thereby saving money on advertisements of their products. The end-to-end AI pipeline performs all the necessary steps as follows:
+Improve your advertisement efficiency and conversion rate prediction (CPR) with this AI-based tool that leverages deep learning, machine learning, and natural language processing (NLP) to automatically classify irrelevant queries from relevant ones. This project is designed to save money on advertisements by identifying when search engines like Google display wrong ads for a brand or product.
 
-## 0. Preprocessing:
-src/0_validate_labeled_data.py This is the preprocessing script where the labeled data can be checked for manual errors, and cleaned to make the data consistent.
+## Features
 
-## 1. File Tree Structure:
-src/1_build_files.py
-Build a directory hierarchy in terms of a tree structure. The labeled data consists of multiple brands and each brand consists of multiple products.
+- Validate and preprocess labeled data
+- Build a file tree structure for multiple brands and products
+- Create vocabulary word embeddings using NLP
+- Train an aggregate deep learning model for general query classification
+- Train specific machine learning models for each brand and product
+- Automatically retrain models as labeled data changes
+- Obtain predictions for new data
 
+## Getting Started
 
-## 2. Vocabulary Word Embeddings:
-src/2_build_vocab.py
-This module uses NLP to convert text used for each brand and each product into "Count Vectorizer" word embeddings. The vocabulary files are saved in the result directories. 
+### 0. Preprocessing
 
-## 3.a. Build Aggregate Model:
-src/3a_build_aggregate_model.py
-Not all brands or products have enough datapoints to build Machine Learning models. To categorize the queries for the brands and products that have  inadequate model features, the aggregate model which is trained on all the labeled data points. Since "all" datapoints encompass a large number of training datapoints, a keras-based deep learning classifier is used as opposed to a machine learner classifier which usually provides lower model-performance-metrics in such NLP-based use cases. The vocabulary features created in step 2 are used to train deep learning models to predict a user query relates to "some or the other" brand or product available with the company. This aggregate model is trained on "all" labeled dataset, and does not determine if a "specific" brand or "specific" product information is provided. 
+```bash
+python src/0_validate_labeled_data.py
+```
 
-## 3.b. Build Specific Models:
-src/3b_build_aggregate_model.py
-If adequate data points are available for building a machine learning classifier then this step is automatically performed under the pipeline. Random Forest is known to be a robust ML classifier for NLP operations. For each brand and product in the directory structure, their specific model is created. Automatic qualification of an "acceptable" model is performed and the models which lower AUCs (if the model is performing random guesses) then it is discarded. Through Hyperparameter tuning the models are optimized for best AUC and Accuracy.
+Validate and clean the labeled data for consistency.
 
-## 3.b. Retraining models for later use:
-src/3c_retrain.py
-Companies have an influx of new products and removing old products. As time passes, labeled data also changes. This module automatically detects these changes and retrains the specific models where changes have been made.
+### 1. File Tree Structure
 
-## 4. Get Predictions on new data:
-This module gets predictions for new data. This can be customized for individual company needs.
+```bash
+python src/1_build_files.py
+```
 
-A sample image of Canon EOS search query for which many companies paid for providing a "relevant" advertisement.
+Organize the labeled data into a tree structure consisting of multiple brands and products.
+
+### 2. Vocabulary Word Embeddings
+
+```bash
+python src/2_build_vocab.py
+```
+
+Convert text for each brand and product into "Count Vectorizer" word embeddings using NLP. Save vocabulary files in the result directories.
+
+### 3.a. Build Aggregate Model
+
+```bash
+python src/3a_build_aggregate_model.py
+```
+
+Train an aggregate deep learning model on all labeled data points using Keras. This model classifies whether a query relates to "some or the other" brand or product, but not specific ones.
+
+### 3.b. Build Specific Models
+
+```bash
+python src/3b_build_aggregate_model.py
+```
+
+Create specific Random Forest models for each brand and product in the directory structure, discarding those with low AUCs. Optimize the models for best AUC and accuracy using hyperparameter tuning.
+
+### 3.c. Retraining Models for Later Use
+
+```bash
+python src/3c_retrain.py
+```
+
+Automatically detect changes in labeled data and retrain the specific models accordingly.
+
+### 4. Get Predictions on New Data
+
+Customize this module to obtain predictions for new data based on individual company needs.
+
+## Sample Image
+
+An example of a Canon EOS search query for which many companies paid to display a "relevant" advertisement:
+
 ![ad_img](https://github.com/Aaditya-Bhatia/Search_Engine_Query-Advertisment_Management/blob/master/imgs/Canon_Add_Image.png)
-
