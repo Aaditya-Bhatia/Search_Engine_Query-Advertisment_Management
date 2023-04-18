@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: advertisement-AI-analytics
+Version: 0.0.1
+Summary: Uses machine learning to train advertisement data for each product in an online inventory system
+Author: Aaditya Bhatia (Aadi)
+Author-email: <mail@bhatiaaadi@gmail.com>
+Keywords: python,advertisement management,machine learning,random forest classification
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+License-File: LICENSE

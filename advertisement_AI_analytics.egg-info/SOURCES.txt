@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+advertisement_AI_analytics.egg-info/PKG-INFO
+advertisement_AI_analytics.egg-info/SOURCES.txt
+advertisement_AI_analytics.egg-info/dependency_links.txt
+advertisement_AI_analytics.egg-info/requires.txt
+advertisement_AI_analytics.egg-info/top_level.txt

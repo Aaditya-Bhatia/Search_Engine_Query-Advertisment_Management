@@ -1,0 +1,10 @@
+tensorflow
+matplotlib
+pandas
+tqdm
+Unidecode
+Keras
+numpy
+spacy
+nltk
+scikit_learn
