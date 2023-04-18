@@ -6,5 +6,5 @@ Unidecode==1.0.22
 Keras==2.3.1
 numpy==1.18.2
 spacy==2.2.4
-nltk==3.6.5
+nltk==3.6.6
 scikit_learn==0.22.2.post1
